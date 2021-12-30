@@ -1,0 +1,29 @@
+<div class="container" *ngIf="isloaded">
+
+    <h1 class="d-flex justify-content-center">Buy Crypto</h1>
+    <form (ngSubmit)="onSubmit()">
+      <table class="table">
+          <thead class="headers">
+            <tr>
+              <th scope="col">Crypto Name</th>
+              <th scope="col">Current Crypto Rate</th>
+              <th scope="col">Amount in USD </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let crypto of cryptoRates" class="dataTable">
+              <td>
+                <input class="form-check-input" type="checkbox"  (change)="checkValues($event)"  value="{{crypto.id}}" id="flexCheckDefault">
+                {{ crypto.id }}</td>
+              <td>${{ crypto.current_price | number: '1.8-8' }}</td>
+              <td> <input  type="number"  id="{{crypto.id}}" (change)="updateValues($event)" min="0" value="0" /> </td>
+            </tr>
+          </tbody>
+      </table>
+    </form>
+    <button class="btn btn-dark text-uppercase fw-bold" [disabled]="!selected" (click)='buyCrypto()'> Buy Crypto </button> 
+    <br> <br>
+    
+    <button class="btn btn-dark text-uppercase fw-bold" (click)='backToPortfolio()'>Back</button>
+    
+    </div>

@@ -1,0 +1,16 @@
+td , th
+{
+    height: 50px;
+    width: 50px;
+}
+
+.headers, .dataTable
+{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.result
+{
+    text-align: right;
+}

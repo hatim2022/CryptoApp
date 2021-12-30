@@ -1,0 +1,18 @@
+<h2> Sell Investment for Crypto {{investment.key}} </h2>
+
+<form #f="ngForm" (ngSubmit)="onSubmit()" class="center">
+    <table>
+      <th>
+       <h3>How much do you want Sell</h3>
+      </th>
+      <tr>
+        <input [(ngModel)]="investment.value[1]" type="number" name="shares" min="0" max="{{investment.value[1]}}" placeholder="0" class="form-control">
+      </tr>
+      <tr>
+        <button type="submit" class="btn btn-dark btnstyle">Submit</button>
+        <button (click)='goBack()' class="btn btn-dark btnstyle">Cancel</button>
+      </tr>
+    </table>
+  </form>
+
+

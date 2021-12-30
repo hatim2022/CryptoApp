@@ -1,0 +1,53 @@
+<div *ngIf='isLoading'>
+
+  <h2> Welcome {{user.username}} </h2>
+
+  <div>
+    <button class="centerButton btn-dark text-uppercase fw-bold" (click)='logout()'>Logout</button>
+  </div>
+
+  <div class="centerButton">
+    <button class="nonInvestedButton" (click)="nonInvestOnClick()">
+      <h2> Available: ${{portfolio.nonInvestedBalance}} </h2>
+    </button>
+  </div>
+
+  <div class="depositDiv" *ngIf="nonInvestedIsClicked">
+    <button class="btn btn-dark text-uppercase fw-bold " (click)='deposit()'>Deposit</button>
+    <button class="btn btn-dark text-uppercase fw-bold" (click)='withdraw()'>Withdraw</button>
+    <button class="btn btn-dark text-uppercase fw-bold" (click)='BuyCrypto()'>Buy Crypto</button>
+
+
+    <div [ngClass]="[btnStyle]">
+      <form #f="ngForm" (ngSubmit)="onSubmit()" [hidden] = "hideIt">
+        <table>
+          <tr>
+            <td>How much do you want to {{operation}}</td>
+          </tr>
+          <tr>
+            <input [(ngModel)]="amount" type="number" name="amount" min="0" placeholder="0" class="form-control">
+          </tr>
+          <tr>
+            <button type="submit" class="btn btn-dark">Submit</button>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="centerButton">
+    <button class="nonInvestedButton" (click)='investOnClick()'>
+      <h2>Invested: ${{portfolio.investedTotalBalance}}</h2>
+    </button>
+  </div>
+
+  <div class="centerButton" *ngIf="investedIsClicked">
+    <button class="btn btn-dark text-uppercase fw-bold" (click)='goToTransaction()'>Transaction</button>
+    <button  class="btn btn-dark text-uppercase fw-bold" (click)='goToInvestment()'>Investment</button>
+  </div>
+  
+</div>
+
+<label id='demo'></label>
+<button (click)='printLiveCounter()'>Timer</button>

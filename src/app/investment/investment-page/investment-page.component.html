@@ -1,0 +1,37 @@
+<div class="container" *ngIf="isLoaded">
+
+<h1 class="d-flex justify-content-center">Investments</h1>
+<table class="table">
+    <thead class="headers">
+      <tr>
+        <th scope="col">Crypto Name</th>
+        <th scope="col">Initial Purchased Amount</th>
+        <th scope="col">Shares</th>
+        <th scope="col">Current Crypto Rate</th>
+        <th scope="col">Percent Rate Change</th>
+        <th scope="col">Current Invested Return </th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mergedInvestment of filteredInvestments | keyvalue" class="dataTable">
+        <td>{{ mergedInvestment.key }}</td>
+        <td>{{ mergedInvestment.value[0] | currency: 'USD' }}</td>
+        <td>{{ mergedInvestment.value[1] | number: '1.8-8' }}</td>
+        <td>{{ mergedInvestment.value[2] | number: '1.8-8' }}</td>
+        <td>{{ mergedInvestment.value[3] | number: '1.8-8' }}</td>
+        <td>{{ mergedInvestment.value[4] | number: '1.8-8' }}</td>
+        <td> <button class="btn btn-dark" (click)='sellInvestment(mergedInvestment)'> Sell Investment </button> </td>
+      </tr>
+      <tr class="result">
+        <td colspan="3"></td>
+        <td colspan="4"><b>Total Invested Amount: {{ portfolio.investedTotalBalance | currency: 'USD' }}</b> </td>
+      </tr>
+      <tr class="result">
+        <td colspan="3"></td>
+        <td colspan="4"><b>Total Return Amount: {{ totalReturn | currency: 'USD' }}</b> </td>
+      </tr>
+    </tbody>
+</table>
+
+<button class="btn btn-dark text-uppercase fw-bold" (click)="backToPortfolio()">Back</button>

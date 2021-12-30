@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Transactions</h1>
+    <table class="table" id='tab'>
+        <thead>
+            <tr>
+                <th scope="col">CryptoName</th>
+                <th scope="col">TransactionAmount</th>
+                <th scope="col">TransactionType</th>
+                <th scope="col">Shares</th>
+                <th scope="col">CryptoRate</th>
+                <th scope="col">TimeStamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tr of transactions ">
+                <td> {{tr.cryptoName}}</td>
+                <td>{{tr.transactionAmount}}</td>
+                <td>{{tr.transactionType}}</td>
+                <td>{{tr.shares}}</td>
+                <td>{{tr.cryptoRate}}</td>
+                <td>{{tr.timestamp}}</td>
+            </tr>
+            <button class="btn btn-dark text-uppercase fw-bold" (click) ='goToPortfolio()'> Back</button>
+        </tbody>
+    </table> 
+</div>

@@ -1,0 +1,28 @@
+.loginUI {
+    margin-top: 100px;
+}
+
+button {
+    margin-top: 3%;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+#formInput {
+    margin-left: 40%;
+    width: 20%;
+}
+
+.form-group {
+    margin-top: 15px;
+}
+
+.btn {
+    width: 130px;
+}

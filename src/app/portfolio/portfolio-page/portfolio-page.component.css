@@ -1,0 +1,56 @@
+
+
+.hidenform{
+    display: none;
+}
+
+.mainForm{
+    background-image: linear-gradient( 
+        135deg, rgb(83, 168, 238) 0%, rgb(148, 195, 207) 69%, rgb(188, 231, 236) 89% ) !important;
+}
+
+.divCenter{
+    margin: auto;
+    width: 50%;
+    padding: 45px;
+    text-align: center;
+}
+
+.divClosed{
+    padding: 0px;
+}
+
+.depositDiv{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+
+button {
+    margin-right: 10px;
+    margin-bottom: 50px;
+}
+
+.nonInvestedButton {
+    text-align: center;
+    border-style: outset;
+    border-radius: 1em;
+    width: 500px;
+    height: 100px;
+    background-color: #d9eff3;
+}
+
+.centerButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+}
